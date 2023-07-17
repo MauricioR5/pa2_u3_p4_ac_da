@@ -130,6 +130,18 @@ public class AutorServiceImpl implements AutorService {
 		return this.autorRepository.seleccionarLibroWhereJoin();
 	}
 
+	@Override
+	public List<Autor> buscarFetchJoin() {
+		
+		return this.autorRepository.seleccionarFetchJoin();
+	}
+
+	@Override
+	public List<Libro> buscarLibroFetchJoin() {
+		
+		return this.autorRepository.seleccionarLibroFetchJoin();
+	}
+
 	
 
 }

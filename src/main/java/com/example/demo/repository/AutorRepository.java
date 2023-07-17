@@ -47,5 +47,7 @@ public interface AutorRepository {
 	public List<Autor> seleccionarAutorWhereJoin();
 	public List<Libro> seleccionarLibroWhereJoin();
 	
+	public List<Autor> seleccionarFetchJoin();
+	public List<Libro> seleccionarLibroFetchJoin();
 	
 }

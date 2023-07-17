@@ -183,6 +183,19 @@ public class AutorRepositoryImpl implements AutorRepository{
 		TypedQuery<Libro> myQuery = this.entityManager.createQuery("SELECT lb FROM Autor a, Libro lb WHERE a = lb.autor", Libro.class);
 		return myQuery.getResultList();
 	}
+
+	@Override
+	public List<Autor> seleccionarFetchJoin() {
+		TypedQuery<Autor> myQuery = this.entityManager.createQuery("SELECT a FROM Autor a JOIN FETCH a.libros lb",Autor.class); 
+		return myQuery.getResultList();
+		
+	}
+
+	@Override
+	public List<Libro> seleccionarLibroFetchJoin() {
+		TypedQuery<Libro> myQuery = this.entityManager.createQuery("SELECT lb FROM Libro lb JOIN FETCH lb.autor a",Libro.class); 
+		return myQuery.getResultList();
+	}
 	
 	
 

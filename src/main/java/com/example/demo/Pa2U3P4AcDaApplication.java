@@ -69,10 +69,20 @@ public class Pa2U3P4AcDaApplication implements CommandLineRunner{
 		for(Libro libro : libro5) {
 			System.out.println(libro5);
 		}
+		System.out.println("Ejemplos con Fecht Join");
+		
+		List<Autor> autor6 = this.autorService.buscarFetchJoin();
+		for(Autor autor : autor6) {
+			System.out.println(autor6);
+		}
+	
+		List<Libro> libro6 = this.autorService.buscarLibroFetchJoin();
+		for(Libro libro : libro6) {
+			System.out.println(libro6);
 		
 		}
 		
-		
+	}
 	
 }
 

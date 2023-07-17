@@ -46,4 +46,7 @@ public interface AutorService {
 	public List<Autor> buscarAutorWhereJoin();
 	public List<Libro> buscarLibroWhereJoin();
 	
+	public List<Autor> buscarFetchJoin();
+	public List<Libro> buscarLibroFetchJoin();
+	
 }
