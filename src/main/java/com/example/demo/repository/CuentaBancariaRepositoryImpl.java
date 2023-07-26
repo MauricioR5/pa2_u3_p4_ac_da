@@ -38,8 +38,9 @@ public class CuentaBancariaRepositoryImpl implements CuentaBancariaRepository{
 
 	@Override
 	public CuentaBancaria buscarPorCuenta(String cuenta) {
-		TypedQuery<CuentaBancaria> myQuery = this.entityManager.createQuery("SELECT c FROM CuentaBancaria c JOIN FETCH c.propietario WHERE c.numero = :numero",CuentaBancaria.class); //JOIN e INNER JOIN son lo mismo, solo es abreviacion
-		myQuery.setParameter("numero", cuenta);
+		TypedQuery<CuentaBancaria> myQuery = this.entityManager
+				.createQuery("SELECT cb FROM CuentaBancaria cb WHERE cb.numero = :datoNumero", CuentaBancaria.class);
+		myQuery.setParameter("datoNumero", cuenta);
 		return myQuery.getSingleResult();
 	}
 

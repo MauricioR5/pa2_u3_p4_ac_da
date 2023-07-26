@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 import com.example.demo.repository.CuentaBancariaRepository;
 import com.example.demo.repository.modelo.CuentaBancaria;
 
+import jakarta.transaction.Transactional;
+import jakarta.transaction.Transactional.TxType;
+
 @Service
 public class CuentaBancariaServiceImpl implements CuentaBancariaService{
 
@@ -18,6 +21,7 @@ public class CuentaBancariaServiceImpl implements CuentaBancariaService{
 	}
 
 	@Override
+	@Transactional(value = TxType.REQUIRED)
 	public void modificar(CuentaBancaria cuentaBancaria) {
 		this.cuentaBancariaRepository.actualizar(cuentaBancaria);
 	}
