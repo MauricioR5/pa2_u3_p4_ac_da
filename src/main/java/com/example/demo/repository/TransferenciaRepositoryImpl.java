@@ -29,11 +29,13 @@ public class TransferenciaRepositoryImpl implements TransferenciaRepository{
 	}
 
 	@Override
+	@Transactional(value = TxType.MANDATORY)
 	public void actualizar(Transferencia transferencia) {
 		this.entityManager.merge(transferencia);
 	}
 
 	@Override
+	@Transactional(value= TxType.NOT_SUPPORTED)
 	public Transferencia buscar(Integer id) {
 		return this.entityManager.find(Transferencia.class, id);
 	}
