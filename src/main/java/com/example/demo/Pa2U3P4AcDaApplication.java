@@ -17,12 +17,6 @@ import com.example.demo.service.TransferenciaService;
 public class Pa2U3P4AcDaApplication implements CommandLineRunner {
 
 	
-	@Autowired
-	private CuentaBancariaService cuentaBancariaService;
-
-	@Autowired
-	private TransferenciaService transferenciaService;
-	
 	public static void main(String[] args) {
 		SpringApplication.run(Pa2U3P4AcDaApplication.class, args);
 	}
@@ -31,23 +25,7 @@ public class Pa2U3P4AcDaApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("Main " + TransactionSynchronizationManager.isActualTransactionActive());
-		
-		CuentaBancaria bancaria = new CuentaBancaria();
-		
-		CuentaBancaria bancaria2 = new CuentaBancaria();
-		
-		bancaria.setNumero("123456");
-		bancaria.setSaldo(new BigDecimal(50));
-		bancaria.setTipo("A");
-	//	 this.cuentaBancariaService.agregar(bancaria);
-		
-		bancaria2.setNumero("789456");
-		bancaria2.setSaldo(new BigDecimal(56));
-		bancaria2.setTipo("A");
-		
-	//	this.cuentaBancariaService.agregar(bancaria2);
-		
-		this.transferenciaService.realizarTransfer("123456", "789456", new BigDecimal(115));
+	
 	}
 		
 	
