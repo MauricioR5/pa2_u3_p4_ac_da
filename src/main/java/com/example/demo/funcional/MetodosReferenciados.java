@@ -30,5 +30,22 @@ public class MetodosReferenciados {
 		}
 	}
 	
+	//Function
+	
+	public String aplicar(int numeroDecimal) {
+	    String numeroBinario = Integer.toBinaryString(numeroDecimal);
+	    return numeroBinario;
+	}
+	
+	
+	
+	
+	//Unary Operator
+	
+	public Integer multiplicar(Integer numero) {
+	    return numero * 25;
+	
+	
+	}
 	
 }
