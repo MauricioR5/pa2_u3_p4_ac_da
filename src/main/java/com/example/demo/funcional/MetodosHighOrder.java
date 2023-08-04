@@ -11,12 +11,13 @@ public class MetodosHighOrder {
 
 		LOG.info("HighOrder Supplier: " + funcion.getId());
 	}
-
+		
+	//Consumer
 	public static void metodoConsumer(IPersonaConsumer<String> funcion, String arg) {
 		funcion.accept(arg);
-		//LOG.info(cadena + " " + arg);
 	}
 	
+	//Predicate
 	public static boolean metodoPredicate(IPersonaPredicate<Integer> funcion, Integer arg) {
 		funcion.evaluar(arg);
 		return true;
@@ -25,15 +26,15 @@ public class MetodosHighOrder {
 	// Function
 	public static Character metodoFunction(IPersonaFunction<Character, Integer> funcion, Integer arg) {
 
-		return funcion.aplicar(arg);
+		return funcion.aplicar(12);
 
 	}
 
 	// Unary Operator
 	public static Double metodoUnaryOperator(IPersonaUnaryOperator<Double> funcion, Double arg) {
-		Double resultado = arg + 5.55;
-		resultado = arg + resultado/4.5;
-		return funcion.aplicar(arg)+ resultado;
+		LOG.info("a: "+ arg);
+		return arg;
+
 	}
 
 }

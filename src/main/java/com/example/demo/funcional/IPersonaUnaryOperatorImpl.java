@@ -1,12 +1,13 @@
 package com.example.demo.funcional;
 
-public class IPersonaUnaryOperatorImpl implements IPersonaUnaryOperator<Double>{
+public class IPersonaUnaryOperatorImpl implements IPersonaUnaryOperator<Double> {
 
 	@Override
 	public Double aplicar(Double arg) {
-		Double resultado = arg + 8.43;
-		resultado = arg + resultado/2.4;
+
+		Double resultado = arg * 2.0; 
+		resultado = Math.sqrt(resultado); 
 		return resultado;
 	}
-	
+
 }

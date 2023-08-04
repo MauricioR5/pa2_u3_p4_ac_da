@@ -1,16 +1,18 @@
 package com.example.demo.funcional;
 
-public class IPersonaPredicateImpl  implements IPersonaPredicate<Integer>{
+import org.slf4j.LoggerFactory;
+
+import ch.qos.logback.classic.Logger;
+
+public class IPersonaPredicateImpl  implements IPersonaPredicate<String>{
+	
+	private static final Logger LOG = (Logger) LoggerFactory.getLogger(IPersonaPredicateImpl.class);
+
 
 	@Override
-	public boolean evaluar(Integer arg) {
-		Integer valor = 15;
-
-		if (arg.compareTo(valor) > 25) {
-			return true;
-		} else {
-			return false;
-		}
+	public boolean evaluar(String arg) {
+	LOG.info("Ejemplo" + arg);
+	return true;
 	}
 
 }
