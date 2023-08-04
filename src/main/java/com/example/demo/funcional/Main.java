@@ -31,7 +31,7 @@ public class Main {
 		// 2 Lambdas
 		MetodosHighOrder.metodoSupplier(() -> "1723524664");
 
-		// 3 metodos referenciados
+		// 3 Metodos Referenciados
 
 		MetodosHighOrder.metodoSupplier(MetodosReferenciados::getHO);
 
