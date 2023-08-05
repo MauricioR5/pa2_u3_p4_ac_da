@@ -1,7 +1,9 @@
-	package com.example.demo.repository;
+package com.example.demo.repository;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.repository.modelo.CuentaBancaria;
@@ -14,26 +16,30 @@ import jakarta.transaction.Transactional;
 
 @Repository
 @Transactional
-public class CuentaBancariaRepositoryImpl implements CuentaBancariaRepository{
-	
+public class CuentaBancariaRepositoryImpl implements CuentaBancariaRepository {
+
+	private static final Logger LOG = LoggerFactory.getLogger(CuentaBancariaRepositoryImpl.class);
+
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Override
 	public void insertar(CuentaBancaria cuentaBancaria) {
 		this.entityManager.persist(cuentaBancaria);
-		
+		LOG.info("Hilo Repository: " + Thread.currentThread().getName());
+
 	}
 
 	@Override
 	public void eliminar(Integer id) {
 		this.entityManager.remove(id);
-		
+
 	}
+
 	@Override
 	public void actualizar(CuentaBancaria cuentaBancaria) {
 		this.entityManager.merge(cuentaBancaria);
-		
+
 	}
 
 	@Override
@@ -44,11 +50,9 @@ public class CuentaBancariaRepositoryImpl implements CuentaBancariaRepository{
 		return myQuery.getSingleResult();
 	}
 
-
 	@Override
 	public List<Transferencia> seleccionarListaTransferencia() {
 		return null;
 	}
 
-	
 }

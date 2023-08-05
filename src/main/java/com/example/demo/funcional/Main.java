@@ -106,6 +106,7 @@ public class Main {
 				Double resultado2 = MetodosHighOrder.metodoUnaryOperator(MetodosReferenciados::aplicar, resultado1);
 				LOG.info("Unary Operator Metodos Referenciados: " + resultado2);
 		
+								
 
 	
 }
